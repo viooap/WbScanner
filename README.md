@@ -14,7 +14,9 @@ Wbscanner dibuat untuk menyederhanakan dan mengotomatiskan seluruh proses menemu
 | **Linux** | `./menu.sh` (+ `install.sh`) |
 | **macOS** | `./menu.sh` — sama seperti Linux |
 | **Windows** | `menu.bat` — butuh Git Bash untuk menjalankan script `.sh` |
+
  Go version 1.21 dan git.
+
 # Install
 ```
 git clone https://github.com/viooap/WbScanner.git
