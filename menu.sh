@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# menu.sh - Menu interaktif Bug Bounty Toolkit (Linux/macOS/Git Bash)
-# Tinggal pilih angka, script yang kerjain.
+
 set -uo pipefail
 
 # warna
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; NC='\033[0m'
-# banner: hijau terang + sentuhan cyan (#1FFFAA / #00FF99)
+
 BAN='\033[38;2;31;255;170m'
 
 # banner
@@ -28,7 +27,7 @@ export PATH="$GOBIN:$PATH"
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; NC='\033[0m'
 
 # fungsi tanya jawab 
-ask() { # $1 = pesan, $2 = var name (default)
+ask() { 
   local var="$2"; local def="${3:-}"
   read -rp "$1" "${var}"
   if [[ -z "${!var}" ]]; then printf -v "$var" "%s" "$def"; fi
