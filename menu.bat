@@ -1,9 +1,9 @@
 @echo off
 chcp 65001 >nul
 REM ============================================================
-REM  MENU.BAT - Bug Bounty Toolkit menu (Windows)
+REM  MENU.BAT - WbScanner (Windows)
 REM  Wajib: Go sudah terinstall + Git Bash tersedia untuk .sh
-REM  Cara pakai: klik 2x file ini, lalu pilih angka.
+REM  
 REM ============================================================
 setlocal enabledelayedexpansion
 title WbScanners - Menu
