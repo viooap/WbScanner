@@ -2,12 +2,12 @@
 
 set -uo pipefail
 
-# warna
+# === warna ===
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; NC='\033[0m'
 
 BAN='\033[38;2;31;255;170m'
 
-# banner ini
+# === banner ini ===
 banner() {
   echo -e "${BAN}██╗    ██╗██████╗ ███████╗ ██████╗ █████╗ ███╗   ██╗███╗   ██╗███████╗██████╗ ███████╗${NC}"
   echo -e "${BAN}██║    ██║██╔══██╗██╔════╝██╔════╝██╔══██╗████╗  ██║████╗  ██║██╔════╝██╔══██╗██╔════╝${NC}"
@@ -23,10 +23,10 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export GOBIN="${GOBIN:-$HOME/go/bin}"
 export PATH="$GOBIN:$PATH"
 
-# warna
+# === warna ===
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; NC='\033[0m'
 
-# fungsi tanya jawab 
+# === fungsi tanya jawab ===
 ask() { 
   local var="$2"; local def="${3:-}"
   read -rp "$1" "${var}"
@@ -55,7 +55,7 @@ setup_path() {
   echo "    export PATH=\"\$HOME/go/bin:\$PATH\""
 }
 
-#  MENU 1 : RECON
+#  === MENU 1 : RECON ===
 menu_recon() {
   local domain; ask "Masukkan nama domain (contoh: example.com): " domain
   [[ -z "$domain" ]] && { err "Domain kosong."; return; }
@@ -64,7 +64,7 @@ menu_recon() {
   ok "Selesai. Daftar subdomain ada di: $DIR/out/$domain/all_subs.txt"
 }
 
-# MENU 2 : PROBE 
+# === MENU 2 : PROBE ===
 menu_probe() {
   local domain; ask "Domain yang tadi (contoh: example.com): " domain
   local file="$DIR/out/$domain/all_subs.txt"
@@ -74,7 +74,7 @@ menu_probe() {
   ok "Selesai. URL hidup: $DIR/out/$domain/live_urls.txt"
 }
 
-#  MENU 3 : URL 
+# === MENU 3 : URL === 
 menu_urls() {
   local domain; ask "Domain (contoh: example.com): " domain
   info "Mengumpulkan URL dari arsip ..."
@@ -82,7 +82,7 @@ menu_urls() {
   ok "Selesai. URL: $DIR/out/$domain/urls_all.txt"
 }
 
-#  MENU 4 : SCAN 
+#  === MENU 4 : SCAN === 
 menu_scan() {
   local domain; ask "Domain (contoh: example.com): " domain
   local file="$DIR/out/$domain/live_urls.txt"
@@ -92,7 +92,7 @@ menu_scan() {
   ok "Selesai. Hasil: $DIR/out/$domain/nuclei.txt"
 }
 
-#  MENU 5 : FUZZ 
+# === MENU 5 : FUZZ ===
 menu_fuzz() {
   local url wordlist; ask "URL target (contoh: https://example.com): " url
   wordlist="$DIR/lists/med.txt"
@@ -101,7 +101,7 @@ menu_fuzz() {
   ok "Selesai. Hasil fuzz: /tmp/ffuf.json"
 }
 
-#  MENU 6 : BACA HASIL 
+# === MENU 6 : BACA HASIL ===
 menu_lihat() {
   local domain; ask "Domain (contoh: example.com): " domain
   local d="$DIR/out/$domain"
@@ -111,7 +111,7 @@ menu_lihat() {
   [[ -f "$d/$f" ]] && { echo "---- $d/$f ----"; cat "$d/$f"; } || err "File tidak ada."
 }
 
-#  MENU UTAMA 
+#  === MENU UTAMA ===
 while true; do
   banner
   echo -e "${BAN}----------------------------------------${NC}"
