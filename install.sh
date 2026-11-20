@@ -6,24 +6,24 @@ GOBIN="${GOBIN:-$HOME/go/bin}"
 GOBIN="$(realpath "$GOBIN")"
 
 TOOLS=(
-  #  Subdomain
+  #  === Subdomain ===
   github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest  
   github.com/projectdiscovery/dnsx/cmd/dnsx@latest                 
-  #  HTTP prober 
+  #  === HTTP prober ===
   github.com/projectdiscovery/httpx/cmd/httpx@latest              
   github.com/projectdiscovery/katana/cmd/katana@latest            
-  #  Content 
+  # === Content ===
   github.com/ffuf/ffuf/v2@latest                                 
   github.com/hakluke/hakrawler@latest                             
-  #  URL gathering (passive) 
+  # ==== URL gathering (passive) ===
   github.com/lc/gau/v2/cmd/gau@latest                            
   github.com/tomnomnom/waybackurls@latest                        
   github.com/tomnomnom/unfurl@latest                               
-  #  Vuln scanning 
+  # === Vuln scanning ===
   github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest           
-  #  Host/port scanning 
+  # === Host/port scanning ===
   github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
-  #  Utility 
+  # === Utility ===
   github.com/tomnomnom/anew@latest                                 
   github.com/tomnomnom/qsreplace@latest                         
 )
